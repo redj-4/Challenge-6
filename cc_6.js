@@ -91,3 +91,18 @@ const discountedOrders = applyBulkDiscount(orders, amount => amount > 500 ? amou
 
 // Test Data Output:
 console.log(discountedOrders); // Expected output: [200, 540, 1080, 450, 720]
+
+//Task 7: Closures 
+// Function that creates an expense tracker using closures
+const createExpenseTracker = () => {
+  let totalExpenses = 0;
+  return (expense) => {
+    totalExpenses += expense;
+    return `Total Expenses: $${totalExpenses}`;
+  };
+};
+
+// Test Data
+let tracker = createExpenseTracker();
+console.log(tracker(200)); // Expected output: "Total Expenses: $200"
+console.log(tracker(150)); // Expected output: "Total Expenses: $350"
